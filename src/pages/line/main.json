@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "3天吃遍梅州美食",
+  "navigationStyle": "default",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-row": "/static/vant/row/index",
+    "van-col": "/static/vant/col/index",
+    "van-button": "/static/vant/button/index",
+    "van-icon": "/static/vant/icon/index",
+    "van-card": "/static/vant/card/index",
+    "van-cell": "/static/vant/cell/index",
+    "van-cell-group": "/static/vant/cell-group/index",
+    "van-tag": "/static/vant/tag/index"
+  }
+}

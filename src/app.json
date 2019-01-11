@@ -1,0 +1,7 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/spot/main",
+    "pages/line/main"
+  ]
+}
