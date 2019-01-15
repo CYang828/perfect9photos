@@ -7,6 +7,7 @@
     title-class="recommand-title"
     value="查看更多"
     value-class="recommand-value"
+    custom-class="recommand-cell"
   >
     <view slot="right-icon" class="recommand-icon">
       <van-icon name="arrow" />
@@ -48,9 +49,14 @@ export default {
 
 <style>
 .recommand {
-  width: 750rpx !important;
+  width: 100% !important;
   margin: 0rpx !important;
   padding: 0rpx !important;
+  border-radius: 10rpx !important;
+}
+
+.recommand-cell {
+  border-radius: 20rpx !important;
 }
 
 .recommand-title {
@@ -82,12 +88,12 @@ export default {
 }
 
 .recommand-item-small {
-  width: 230rpx;
+  width: 231rpx;
   height: 270rpx;
 }
 
 .recommand-item-little {
-  width: 230rpx;
+  width: 231rpx;
   height: 158rpx;
   margin-top: -4rpx;
 }

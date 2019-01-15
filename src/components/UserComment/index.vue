@@ -3,7 +3,7 @@
 <view>
   <!-- 模块标题 -->
   <van-cell
-    title="推荐目的地"
+    title="热门九图客"
     title-class="comment-title"
     value="查看更多"
     value-class="comment-value"
@@ -18,7 +18,6 @@
     <view>
       <van-cell 
         custom-class="comment-head" 
-        center
         v-bind:border="false"> 
         <view slot="title">
           <van-row>
@@ -34,15 +33,10 @@
               </van-row>
             </van-col>
             <van-col>
-              <van-cell 
-              custom-class="comment-head-like-cell" 
-              title-class="comment-head-like"
-              v-bind:border="false">
-                <view slot="title">
-                  <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
-                  <label class="comment-head-like-count">796</label>
-                </view>
-              </van-cell>
+              <view class="comment-head-like">
+                <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
+                <label class="comment-head-like-count">796</label>
+              </view>
             </van-col>
           </van-row>
         </view>
@@ -88,7 +82,8 @@
         </van-row>
         <van-row>
           <van-cell 
-          custom-class="comment-location-cell">
+          custom-class="comment-location-cell"
+          v-bind:border="false">
             <view slot="title">
               <van-tag custom-class="comment-location-tag" color="#EEF1F6">
                 <image class="comment-location-tag-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
@@ -108,7 +103,8 @@
   <view class="comment-item">
     <van-cell 
       custom-class="comment-head" 
-      center> 
+      center
+      v-bind:border="false"> 
       <view slot="title">
         <van-row>
           <van-col>
@@ -123,14 +119,10 @@
             </van-row>
           </van-col>
           <van-col>
-            <van-cell 
-            custom-class="comment-head-like-cell" 
-            title-class="comment-head-like">
-              <view slot="title">
-                <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
-                <label class="comment-head-like-count">230</label>
-              </view>
-            </van-cell>
+            <view class="comment-head-like">
+              <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
+              <label class="comment-head-like-count">230</label>
+            </view>
           </van-col>
         </van-row>
       </view>
@@ -181,7 +173,6 @@ export default {
 
 <style>
 .comment {
-  width: 750rpx !important;
   margin: 0rpx !important;
   padding: 0rpx !important;
 }
@@ -238,14 +229,14 @@ export default {
   color: #838386;
 }
 
-.comment-head-like-cell {
-  padding: 10rpx 0rpx 0rpx 0rpx !important; 
+.comment-head-like {
   margin-left: 420rpx;
+  margin-top: 10rpx;
 }
 
 .comment-head-like-icon {
   width: 36rpx;
-  height: 36rpx;
+  height: 32rpx;
 }
 
 .comment-head-like-count {
@@ -300,13 +291,13 @@ export default {
 }
 
 .comment-location-tag-icon {
-  width: 30rpx;
-  height: 30rpx;
+  width: 20rpx;
+  height: 28rpx;
 }
 
 .comment-location-tag-text {
   position: relative;
-  top: -8rpx;
+  top: -5rpx;
   color: #28272C;
   font-weight: 500;
   font-size: 20rpx;
