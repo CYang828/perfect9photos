@@ -12,6 +12,7 @@
     "van-search": "/static/vant/search/index",
     "van-card": "/static/vant/card/index",
     "van-cell": "/static/vant/cell/index",
-    "van-tag": "/static/vant/tag/index"
+    "van-tag": "/static/vant/tag/index",
+    "van-dialog": "/static/vant/dialog/index"
   }
 }

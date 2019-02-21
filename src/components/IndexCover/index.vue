@@ -6,7 +6,7 @@
         <van-cell custom-class="location-cell" v-bind:border="false" center>
           <view slot="title">
             <label class="location-name">北京</label>
-            <image class="triangle-icon" src="/static/image/index/triangle.png" />
+            <image class="triangle-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/triangle.png" />
           </view>
         </van-cell>
         <van-cell custom-class="location-cell" v-bind:border="false" center>
@@ -30,7 +30,7 @@ export default {
 .cover-image {
   width: 100%;
   height: 804rpx;
-  z-index: 998;
+  z-index: 98;
 }
 .align {
   display: flex;
@@ -40,7 +40,7 @@ export default {
   position: absolute;  
   top: 326rpx;
   opacity: 0.95;
-  z-index: 999;
+  z-index: 99;
   margin-left: 33%;
 }
 
@@ -87,7 +87,7 @@ export default {
   width: 90%;
   height: 84rpx;
   opacity: 0.95;
-  z-index: 999;
+  z-index: 99;
   border-radius:60rpx;
 }
 

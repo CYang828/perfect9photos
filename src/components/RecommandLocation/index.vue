@@ -22,19 +22,19 @@
         </a>
       </van-col>
       <van-col custom-class="recommand-item-gap">
-        <image class="recommand-item-small" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand2.png" />
+        <image @click="comingsoon" class="recommand-item-small" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand2.png" />
       </van-col>
     </van-row>
     <!-- 第二排目的地 -->
     <van-row custom-class="recommand-row-gap">
       <van-col>
-        <image class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand3.png" />
+        <image @click="comingsoon" class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand3.png" />
       </van-col>
       <van-col custom-class="recommand-item-gap" >
-        <image class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand4.png" />
+        <image @click="comingsoon" class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand4.png" />
       </van-col>
       <van-col custom-class="recommand-item-gap">
-        <image class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand5.png" />
+        <image @click="comingsoon" class="recommand-item-little" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand5.png" />
       </van-col>
     </van-row>
   </view>
@@ -42,8 +42,19 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
+import {SET_COMINGSOON_DIALOG_SHOW} from '@/store/mutation-types'
+
 export default {
-  name: "RecommandLocation"
+  name: "RecommandLocation",
+  methods: {
+    ...mapMutations([
+      SET_COMINGSOON_DIALOG_SHOW
+    ]),
+    comingsoon () {
+      this[SET_COMINGSOON_DIALOG_SHOW](true)
+    }
+  }
 }
 </script>
 

@@ -5,6 +5,7 @@
       <recommand-location />
       <user-comment />
     </view>
+    <coming-soon-dialog />
   </view>
 </template>
 
@@ -12,6 +13,7 @@
 import IndexCover from '@/components/IndexCover/index.vue'
 import RecommandLocation from '@/components/RecommandLocation/index.vue'
 import UserComment from '@/components/UserComment/index.vue'
+import ComingSoonDialog from '@/components/ComingSoonDialog/index.vue'
 
 export default {
   data () {
@@ -20,7 +22,8 @@ export default {
   components: {
     IndexCover,
     RecommandLocation,
-    UserComment
+    UserComment,
+    ComingSoonDialog
   }
 }
 </script>
@@ -39,7 +42,7 @@ export default {
   display: block;
   border-radius: 20rpx;
   top: 790rpx;
-  z-index: 999;
+  z-index: 99;
   background-color: #fff;
 }
 

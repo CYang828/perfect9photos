@@ -12,17 +12,37 @@
     </view>
   </view>
   <label class="desc-info">梅州是国家历史文化名城，是我国汉族客家人最集中的聚居地，素有“世界客都”之称。梅州市自古以来就有“梅花之乡”的称谓，域内多见古梅。</label>
-  <!-- <image mode="scaleToFill" class="desc-spot-map" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/spot-map.png" /> -->
-  <map class="desc-spot-map" subkey="U5FBZ-YMM6G-5OJQY-IORMX-YKISV-TCB4Z"
-  longitude="116.12"
-  latitude="24.28"
-  scale=13 />
+  <image mode="scaleToFill" class="desc-spot-map" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/map.jpg" />
+  <!-- <map class="desc-spot-map" subkey="U5FBZ-YMM6G-5OJQY-IORMX-YKISV-TCB4Z"
+  longitude="116.128679"
+  latitude="24.294506"
+  :markers="markers"
+  scale=14 /> -->
 </view>
 </template>
 
 <script>
 export default {
-  name: "SpotDesc"
+  name: "SpotDesc",
+  data() {
+    return {
+      markers: [{
+        iconPath: '',
+        id: 1,
+        longitude: 116.121485,
+        latitude: 24.277292,
+        width: 22,
+        height: 26,
+      },
+      {
+        id: 8,
+        longitude: 116.344342,
+        latitude: 24.420726,
+        width: 22,
+        height: 26,
+      }]
+    }
+  }
 }
 </script>
 

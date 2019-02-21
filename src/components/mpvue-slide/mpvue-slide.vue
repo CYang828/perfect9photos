@@ -67,7 +67,7 @@
         // 获取wrap层的宽度
         const $wrapRect = await boundingClientRect('.mpvue-slide > .slide-wrap')
         this.wrapWidth = $wrapRect.width
-        this.wrapWidth = 460
+        this.wrapWidth = 500
 
         const $slideRect = await boundingClientRect('.mpvue-slide')
         this.slideWidth = $slideRect.width

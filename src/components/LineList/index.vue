@@ -8,21 +8,42 @@
   <view class="line-items-filter">
     <van-row>
       <van-col>
-        <view class="line-items-filter-condition">
-          <span class="line-items-filter-text">全部线路</span>
-          <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-gray.png" />
+        <view class="dropdown">
+          <view class="line-items-filter-condition">
+            <span class="line-items-filter-text">{{ filter1_name }}</span>
+            <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-gray.png" />
+          </view>
+          <view class="dropdown-content">
+            <label v-for="(item, index) in filter1" :key="index" 
+            @click="onFilter1Select(event, index)" 
+            :class="{ 'dropdown-selected':index==filter1SelectedIndex }">{{ item }}</label>
+          </view>
         </view>
       </van-col>
       <van-col>
-        <view class="line-items-filter-condition">
-          <span class="line-items-filter-text line-items-filter-gap line-items-filter-selected">热度排序</span>
-          <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-black.png" />
+        <view class="dropdown">
+          <view class="line-items-filter-condition">
+            <span class="line-items-filter-text line-items-filter-gap">综合排序</span>
+            <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-gray.png" />
+          </view>
+          <view class="dropdown-content">
+            <label v-for="(item, index) in filter2" :key="index" 
+            @click="onFilter2Select(event, index)" 
+            :class="{ 'dropdown-selected':index==filter2SelectedIndex }">{{ item }}</label>
+          </view>
         </view>
       </van-col>
       <van-col>
-        <view>
-          <label class="line-items-filter-text line-items-filter-gap">所有时间</label>
-          <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-gray.png" />
+        <view class="dropdown">
+          <view>
+            <label class="line-items-filter-text line-items-filter-gap">所有时间</label>
+            <image class="arrow-down" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/arrow-down-gray.png" />
+          </view>
+          <view class="dropdown-content">
+            <label v-for="(item, index) in filter3" :key="index" 
+            @click="onFilter3Select(event, index)" 
+            :class="{ 'dropdown-selected':index==filter3SelectedIndex }">{{ item }}</label>
+          </view>
         </view>
       </van-col>
     </van-row>
@@ -30,56 +51,24 @@
   
   <!-- 路线item -->
   <view>
-    <van-row>
+    <van-row v-for="idx in lineRow" :key="idx" custom-class="line-item-row-gap">
       <van-col custom-class="line-item">
-        <a href="/pages/line/main">  
-          <image class="line-item-image" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line1.png" />
-        </a>
-        <lable class="line-item-desc-title">3天吃遍梅州美食</lable>
-        <label class="line-item-desc-info">预算2000，吃货福利！</label>
-        <view class="line-item-desc-footer">
-          <image class="line-item-desc-like" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/like.png" />
-          <label class="line-item-desc-like-count">29</label>
-          <image class="line-item-desc-hotism" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/hot.png" />
-          <label class="line-item-desc-hotism-count">2068</label>
-        </view>
-      </van-col>
-      <van-col>
-        <van-col custom-class="line-item line-item-gap">
-          <image class="line-item-image" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line2.png" />
-          <lable class="line-item-desc-title">梅州周边名胜打卡</lable>
-          <label class="line-item-desc-info">一站解锁珠三角！</label>
-          <view class="line-item-desc-footer">
-            <image class="line-item-desc-like" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/like.png" />
-            <label class="line-item-desc-like-count">25</label>
-            <image class="line-item-desc-hotism" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/hot.png" />
-            <label class="line-item-desc-hotism-count">1937</label>
-          </view>
-        </van-col>
-      </van-col>
-    </van-row>
-    <van-row custom-class="line-item-row-gap">
-      <van-col custom-class="line-item">
-        <image class="line-item-image" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line3.png" />
-          <lable class="line-item-desc-title">诗意梅州</lable>
-          <label class="line-item-desc-info">体验禅意生活！</label>
-          <view class="line-item-desc-footer">
-            <image class="line-item-desc-like" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/like.png" />
-            <label class="line-item-desc-like-count">10</label>
-            <image class="line-item-desc-hotism" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/hot.png" />
-            <label class="line-item-desc-hotism-count">1326</label>
-          </view>
+        <line-card 
+        :href="lines[2*idx-2].href"
+        :image="lines[2*idx-2].image"
+        :title="lines[2*idx-2].title"
+        :info="lines[2*idx-2].info"
+        :like_count="lines[2*idx-2].like_count"
+        :hotism_count="lines[2*idx-2].hotism_count" />
       </van-col>
       <van-col custom-class="line-item line-item-gap">
-        <image class="line-item-image" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line4.png" />
-          <lable class="line-item-desc-title">梅州青山绿水</lable>
-          <label class="line-item-desc-info">天然氧吧！</label>
-          <view class="line-item-desc-footer">
-            <image class="line-item-desc-like" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/like.png" />
-            <label class="line-item-desc-like-count">8</label>
-            <image class="line-item-desc-hotism" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/hot.png" />
-            <label class="line-item-desc-hotism-count">1025</label>
-          </view>
+        <line-card 
+        :href="lines[2*idx-1].href"
+        :image="lines[2*idx-1].image"
+        :title="lines[2*idx-1].title"
+        :info="lines[2*idx-1].info"
+        :like_count="lines[2*idx-1].like_count"
+        :hotism_count="lines[2*idx-1].hotism_count" />
       </van-col>
     </van-row>
   </view>
@@ -87,8 +76,131 @@
 </template>
 
 <script>
+import LineCard from '@/components/LineCard/index.vue'
+
 export default {
-  name: "LineList"
+  name: "LineList",
+  data () {
+    return {
+      lineRow: 4,
+      filter1SelectedIndex: 0,
+      filter2SelectedIndex: 0,
+      filter3SelectedIndex: 0,
+      filter1: ['全部路线', '美食路线', '民宿路线', '自驾路线'],
+      filter2: ['综合排序', '评价最多', '预算低到高', '预算高到低'],
+      filter3: ['所有时间', '一日游', '三日游', '十日游'],
+      filter1_name: '全部路线',
+      filter2_name: '综合排序',
+      filter3_name: '所有时间',
+      linesRow: 3,
+      lines: [{
+        href: "/pages/line/main",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line1.png",
+        title: "梅州老字号美食推荐",
+        info: "百家传承，客家味道！",
+        like_count: 29,
+        hotism_count: 2068
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line2.png",
+        title: "梅州特色美食之旅",
+        info: "地道梅州味",
+        like_count: 26,
+        hotism_count: 2014
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line3.png",
+        title: "尝遍客家美食，客家米饭香",
+        info: "预算2000，吃货福利！",
+        like_count: 5,
+        hotism_count: 1386
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line4.png",
+        title: "精品农家乐推荐",
+        info: "享地道美食，品纯粹生活",
+        like_count: 4,
+        hotism_count: 1025
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line5.png",
+        title: "传统客家民宿",
+        info: "全身心拥抱客家文化",
+        like_count: 8,
+        hotism_count: 2706
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line6.png",
+        title: "风光观景民宿推荐",
+        info: "远离繁华地，梦入桃花源",
+        like_count: 4,
+        hotism_count: 3760
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line7.png",
+        title: "一天赏遍梅州景",
+        info: "邂逅难忘的梅州风光",
+        like_count: 7,
+        hotism_count: 3265
+      },
+      {
+        href: "#",
+        image: "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/spot/line8.png",
+        title: "深入领略客家文化",
+        info: "文化深厚，不虚此行",
+        like_count: 12,
+        hotism_count: 1128
+      },],
+      line_data: null,
+    }
+  },
+  components: {
+    LineCard
+  },
+  methods: {
+    onFilter1Select (event, index) {
+      this.filter1SelectedIndex = index
+      this.filter1_name = this.filter1[index]
+
+      if (this.lineRow == 4) {
+        this.line_data = this.lines.slice(0)
+      }
+
+      if (index == 0) {
+        this.lineRow = 4
+        this.lines = this.line_data.slice(0)
+      }
+      else if (index == 1) {
+        this.lines = this.line_data.slice(0)
+        this.lineRow = 2
+        this.lines.splice(5, 7)
+      }
+      else if (index == 2) {
+        this.lines = this.line_data.slice(0)
+        this.lineRow = 1
+        this.lines.splice(0, 4)
+      }
+      else if (index == 3) {
+        this.lines = this.line_data.slice(0)
+        this.lineRow = 1
+        this.lines.splice(0, 6)
+      }
+    },
+    onFilter2Select (event, index) {
+      this.filter2SelectedIndex = index
+      this.filter2_name = this.filter2[index]
+    },
+    onFilter3Select (event, index) {
+      this.filter3SelectedIndex = index
+      this.filter3_name = this.filter3[index]
+    },
+  }
 }
 </script>
 
@@ -109,7 +221,7 @@ export default {
 .line-items-filter {
   margin-top: 40rpx;
   margin-left: 50rpx;
-  padding-bottom: 40rpx;
+  padding-bottom: 20rpx;
 }
 
 .line-items-filter-condition {
@@ -153,56 +265,6 @@ export default {
   margin-top: 20rpx;
 }
 
-.line-item-image {
-  width: 330rpx;
-  height: 230rpx;
-}
-
-.line-item-desc-title {
-  display: block !important;
-  margin-left: 20rpx;
-  font-size: 30rpx;
-  font-weight: 500;
-}
-
-.line-item-desc-info {
-  margin-left: 20rpx;
-  font-size: 26rpx;
-  color: #838386;
-}
-
-.line-item-desc-footer {
-  margin-top: 35rpx;
-  margin-left: 125rpx;
-}
-
-.line-item-desc-like {
-  width: 28rpx;
-  height: 32rpx;
-}
-
-.line-item-desc-like-count {
-  font-size: 28rpx;
-  position: relative;
-  top: -4rpx;
-  margin-left: 4rpx;
-  font-weight: 500;
-}
-
-.line-item-desc-hotism {
-  margin-left: 30rpx;
-  width: 28rpx;
-  height: 32rpx;
-}
-
-.line-item-desc-hotism-count {
-  font-size: 28rpx;
-  position: relative;
-  top: -4rpx;
-  margin-left: 4rpx;
-  font-weight: 500;
-}
-
 .user-action {
   vertical-align:middle;
 }
@@ -215,5 +277,32 @@ export default {
 
 .van-card__content {
   margin-left: 70px;
+}
+
+.dropdown-content {
+  display:none;
+  position:absolute;
+  background-color:#EEEEEE;
+  width:200rpx;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content label {
+    display:block;
+    text-decoration:none;
+    color:black;
+    padding:2rpx 40rpx;
+    font-size: 24rpx;
+}
+/*注意这里不是.dropbtn:hover，因为dropbtn是一个button,不能够用hover*/
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+.dropdown-content label:hover {
+    background-color:#DDDDDD;
+}
+
+.dropdown-selected {
+  font-weight: 700;
 }
 </style>

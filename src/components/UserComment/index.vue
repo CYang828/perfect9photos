@@ -26,7 +26,7 @@
             </van-col>
             <van-col custom-class="comment-head-title">
               <van-row>
-                <label class="comment-head-username">花花</label>
+                <label class="comment-head-username">摄影师小涂</label>
               </van-row>
               <van-row>
                 <label class="comment-head-time">今天 12:42</label>
@@ -35,7 +35,7 @@
             <van-col>
               <view class="comment-head-like">
                 <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
-                <label class="comment-head-like-count">796</label>
+                <label class="comment-head-like-count">925</label>
               </view>
             </van-col>
           </van-row>
@@ -44,40 +44,40 @@
       <view class="comment-images">
         <van-row custom-class="comment-image-row-gap">
           <van-col>
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-1.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-1" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-1.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-2.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-2" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-2.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-3.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-3" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-3.png" mode="scaleToFill" class="comment-image" />
           </van-col>
         </van-row>
         <van-row custom-class="comment-image-row-gap">
           <van-col>
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-4.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-4" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-4.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-5.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-5" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-5.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-6.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-6" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-6.png" mode="scaleToFill" class="comment-image" />
           </van-col>      
         </van-row>
         <van-row custom-class="comment-image-row-gap">
           <van-col>
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-7.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-7" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-7.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-8.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-8" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-8.png" mode="scaleToFill" class="comment-image" />
           </van-col>
           <van-col custom-class="comment-image-gap">
-            <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-9.png" mode="scaleToFill" class="comment-image" />
+            <image @click="onPreview" id="1-9" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-9.png" mode="scaleToFill" class="comment-image" />
           </van-col>      
         </van-row>
         <van-row custom-class="comment-text">
           <label>
-            这是一次意料之外的旅行，也收获了意料之外的惊喜。在做攻略时就彻底被土耳其折服了，充满历史厚重感的伊斯坦布尔，漫天热气球的卡…
+            喜看稻菽千重浪，又是一年丰收时。夕阳西下，漫步在大埔县西河镇车龙村，不时能看到菜地里忙碌的村民，放眼望去是大片的金色稻浪。
           </label>
         </van-row>
         <van-row>
@@ -87,7 +87,7 @@
             <view slot="title">
               <van-tag custom-class="comment-location-tag" color="#EEF1F6">
                 <image class="comment-location-tag-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
-                <lable class="comment-location-tag-text">开塞利</lable>
+                <lable class="comment-location-tag-text">梅州</lable>
               </van-tag>
               <van-tag plain round custom-class="comment-map-navigation">
                 <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/plane.png" class="comment-map-navigation-icon" />
@@ -108,20 +108,20 @@
       <view slot="title">
         <van-row>
           <van-col>
-            <image class="comment-avator" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/avator1.png" />
+            <image class="comment-avator" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/avator2.png" />
           </van-col>
           <van-col custom-class="comment-head-title">
             <van-row>
               <label class="comment-head-username">花花</label>
             </van-row>
             <van-row>
-              <label class="comment-head-time">今天 12:42</label>
+              <label class="comment-head-time">昨天 20:42</label>
             </van-row>
           </van-col>
           <van-col>
             <view class="comment-head-like">
               <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
-              <label class="comment-head-like-count">230</label>
+              <label class="comment-head-like-count">825</label>
             </view>
           </van-col>
         </van-row>
@@ -130,18 +130,18 @@
     <view class="comment-images">
       <van-row custom-class="comment-image-row-gap">
         <van-col>
-          <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-1.png" mode="scaleToFill" class="comment-image" />
+          <image @click="onPreview" id="2-1" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment2-1.png" mode="scaleToFill" class="comment-image" />
         </van-col>
         <van-col custom-class="comment-image-gap">
-          <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-2.png" mode="scaleToFill" class="comment-image" />
+          <image @click="onPreview" id="2-2" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment2-2.png" mode="scaleToFill" class="comment-image" />
         </van-col>
         <van-col custom-class="comment-image-gap">
-          <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment1-3.png" mode="scaleToFill" class="comment-image" />
+          <image @click="onPreview" id="2-3" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment2-3.png" mode="scaleToFill" class="comment-image" />
         </van-col>
       </van-row>
       <van-row custom-class="comment-text">
           <label>
-            这是一次意料之外的旅行，也收获了意料之外的惊喜。在做攻略时就彻底被土耳其折服了，充满历史厚重感的伊斯坦布尔，漫天热气球的卡…
+            食在广州 ，厨出凤城 。这里的凤城就指顺德，顺德是粤菜的发源地。正宗粤菜，寻味顺德。对于吃货来说，风景其次，美食才是王道。
           </label>
         </van-row>
         <van-row>
@@ -151,7 +151,7 @@
             <view slot="title">
               <van-tag custom-class="comment-location-tag" color="#EEF1F6">
                 <image class="comment-location-tag-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
-                <lable class="comment-location-tag-text">开塞利</lable>
+                <lable class="comment-location-tag-text">顺德</lable>
               </van-tag>
               <van-tag plain round custom-class="comment-map-navigation">
                 <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/plane.png" class="comment-map-navigation-icon" />
@@ -162,12 +162,93 @@
         </van-row>
     </view>
   </view>
+
+  <view class="comment-item">
+    <view>
+      <van-cell 
+        custom-class="comment-head" 
+        v-bind:border="false"> 
+        <view slot="title">
+          <van-row>
+            <van-col>
+              <image class="comment-avator" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/avator3.png" />
+            </van-col>
+            <van-col custom-class="comment-head-title">
+              <van-row>
+                <label class="comment-head-username">爱旅行的千纸鹤</label>
+              </van-row>
+              <van-row>
+                <label class="comment-head-time">18-08 09:40</label>
+              </van-row>
+            </van-col>
+            <van-col>
+              <view class="comment-head-like">
+                <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/heart.png" class="comment-head-like-icon" />
+                <label class="comment-head-like-count">674</label>
+              </view>
+            </van-col>
+          </van-row>
+        </view>
+      </van-cell>
+      <view class="comment-images">
+        <van-row custom-class="comment-image-row-gap">
+          <van-col>
+            <image @click="onPreview" id="3-1" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-1.png" mode="scaleToFill" class="comment-image" />
+          </van-col>
+          <van-col custom-class="comment-image-gap">
+            <image @click="onPreview" id="3-2" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-2.png" mode="scaleToFill" class="comment-image" />
+          </van-col>
+          <van-col custom-class="comment-image-gap">
+            <image @click="onPreview" id="3-3" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-3.png" mode="scaleToFill" class="comment-image" />
+          </van-col>
+        </van-row>
+        <van-row custom-class="comment-image-row-gap">
+          <van-col>
+            <image @click="onPreview" id="3-4" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-4.png" mode="scaleToFill" class="comment-image" />
+          </van-col>
+          <van-col custom-class="comment-image-gap">
+            <image @click="onPreview" id="3-5" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-5.png" mode="scaleToFill" class="comment-image" />
+          </van-col>
+          <van-col custom-class="comment-image-gap">
+            <image @click="onPreview" id="3-6" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment3-6.png" mode="scaleToFill" class="comment-image" />
+          </van-col>      
+        </van-row>
+        <van-row custom-class="comment-text">
+          <label>
+            “停车坐爱枫林晚，霜叶红于二月花”十月的天越来越凉，正是赏红叶拍红林的最佳时节。金秋留坝是赏红叶的自驾胜地，强烈推荐！
+          </label>
+        </van-row>
+        <van-row>
+          <van-cell 
+          custom-class="comment-location-cell"
+          v-bind:border="false">
+            <view slot="title">
+              <van-tag custom-class="comment-location-tag" color="#EEF1F6">
+                <image class="comment-location-tag-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
+                <lable class="comment-location-tag-text">留坝</lable>
+              </van-tag>
+              <van-tag plain round custom-class="comment-map-navigation">
+                <image src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/plane.png" class="comment-map-navigation-icon" />
+                <label class="comment-map-navigation-text">去这里</label>
+              </van-tag>
+            </view>
+          </van-cell>
+        </van-row>
+      </view>
+    </view>
+  </view>
 </view>
 </template>
 
 <script>
 export default {
-  name: "UserComment"
+  name: "UserComment",
+  methods: {
+    onPreview (event) {
+      const imageUrl = "cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/comment" + event.target.id + ".png"
+      wx.previewImage({urls: [imageUrl], current: imageUrl})
+    }
+  }
 }
 </script>
 
@@ -230,7 +311,9 @@ export default {
 }
 
 .comment-head-like {
-  margin-left: 420rpx;
+  position:absolute;
+  right:0px;  
+  margin-right: 30rpx;
   margin-top: 10rpx;
 }
 
@@ -305,7 +388,7 @@ export default {
 }
 
 .comment-map-navigation {
-  margin-left: 360rpx;
+  margin-left: 405rpx;
   padding: .45em .45em 0 .45em !important;
 }
 
