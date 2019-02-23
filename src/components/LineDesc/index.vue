@@ -4,7 +4,7 @@
     <!-- 点位模块 -->
     <view class="spot-items">
       <lable class="spot-items-title">本路线包含6个打卡点位</lable>
-      <van-row custom-class="spot-items-tag">
+      <!-- <van-row custom-class="spot-items-tag">
         <slide speed="100">
           <van-col custom-class="spot-items-tag-col">
             <van-tag @click="onClick(1)" custom-class="spot-item-tag">1号</van-tag>
@@ -25,10 +25,76 @@
             <van-tag @click="onClick(8)" custom-class="spot-item-tag spot-item-tag-gap">8号</van-tag>
           </van-col>
         </slide>
-      </van-row>
+      </van-row> -->
+      <view class="spot-items-checkpoints">
+        <van-row>
+          <view class="spot-item-checkpoint spot-item-checkpoint-checked ">
+            <view class="spot-item-checkpoint-text-offset">
+              <label class="spot-item-checkpoint-text">1号</label>
+            </view>
+            <view class="spot-item-checkpointed-gap">
+              <label class="spot-item-checkpoint-text">已打卡</label>
+            </view>
+          </view>
+          <view class="spot-item-checkpoint spot-item-checkpoint-checked spot-item-checkpoint-left">
+            <view class="spot-item-checkpoint-text-offset">
+              <label class="spot-item-checkpoint-text">2号</label>
+            </view>
+            <view class="spot-item-checkpointed-gap">
+              <label class="spot-item-checkpoint-text">已打卡</label>
+            </view>
+          </view>
+          <view class="spot-item-checkpoint spot-item-checkpoint-left">
+            <view class="spot-items-checkpoints-line-offset-unchecked ">
+              <label class="spot-item-checkpoint-text">3号</label>
+            </view>
+          </view>
+          <view class="spot-item-checkpoint spot-item-checkpoint-selected spot-item-checkpoint-left">
+            <view class="spot-items-checkpoints-line-offset-unchecked ">
+              <label class="spot-item-checkpoint-text">4号</label>
+            </view>
+          </view>
+        </van-row>
+
+        <van-row custom-class="spot-items-checkpoints-line-offset">
+          <view class="spot-item-checkpoint">
+            <view class="spot-items-checkpoints-line-offset-unchecked ">
+              <label class="spot-item-checkpoint-text">5号</label>
+            </view>
+          </view>
+          <view class="spot-item-checkpoint spot-item-checkpoint-left">
+            <view class="spot-items-checkpoints-line-offset-unchecked ">
+              <label class="spot-item-checkpoint-text">6号</label>
+            </view>
+          </view>
+        </van-row>
+      </view>
+
+      <view class="spot-detail">
+        <lable class="spot-detail-title">详情</lable>
+        <view>
+          <view class="spot-detail-checkpoint-title">
+            <label>4号点位</label>
+          </view>
+          <label class="spot-detail-checkpoint-address">
+            <image class="spot-detail-checkpoint-address-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
+广东省梅州市梅州县xx区xxxx街道xx号
+          </label>
+          <van-row>
+            <van-button type="default" size="small" custom-class="spot-detail-checkpoint-direction-btn">导航</van-button>
+            <van-button type="default" size="small" custom-class="spot-detail-checkpoint-check-btn">打卡</van-button>
+          </van-row>
+        </view>
+      </view>
     </view>
 
-    <spot-detail
+    <realtime-view :viewImage1="data[spotIndex].viewImage1"
+    :viewImage1Time="data[spotIndex].viewImage1Time"
+    :viewImage2="data[spotIndex].viewImage2"
+    :viewImage2Time="data[spotIndex].viewImage2Time"
+    :viewImage3="data[spotIndex].viewImage3" />
+
+    <!-- <spot-detail
     :title="data[spotIndex].title"
     :viewImage1="data[spotIndex].viewImage1"
     :viewImage1Time="data[spotIndex].viewImage1Time"
@@ -43,16 +109,17 @@
     :price="data[spotIndex].price"
     :phone="data[spotIndex].phone"
     :way="data[spotIndex].way"
-    :open="data[spotIndex].open" />
-
+    :open="data[spotIndex].open" /> -->
   </view>
+  <spot-arounding />
 </view>
 </template>
 
 <script>
 import slide from '@/components/mpvue-slide/mpvue-slide.vue'
 import SpotDetail from '@/components/SpotDetail/index.vue'
-
+import RealtimeView from '@/components/RealtimeView/index.vue'
+import SpotArounding from '@/components/SpotArounding/index.vue'
 
 export default {
   name: "LineDesc",
@@ -149,7 +216,9 @@ export default {
   },
   components: {
     slide,
-    SpotDetail
+    SpotDetail,
+    RealtimeView,
+    SpotArounding
   },
   methods: {
     onClick(index) {
@@ -183,6 +252,52 @@ export default {
   overflow: hidden;
 }
 
+.spot-items-checkpoints {
+  margin-top: 35rpx;
+}
+
+
+.spot-item-checkpoint {
+  position: inline-block;
+  float: left;
+  border-radius: 50% !important;
+  border: solid #000 1px !important;
+  height: 135rpx;
+  width: 135rpx;
+}
+
+.spot-items-checkpoints-line-offset {
+  margin-top: 20rpx;
+}
+
+.spot-items-checkpoints-line-offset-unchecked {
+  position: relative;
+  top: 40rpx;
+}
+
+.spot-item-checkpoint-left {
+  margin-left: 44rpx;
+}
+
+.spot-item-checkpoint-checked {
+  background-color: #EA5252;
+  border: solid #EA5252 1px !important;
+  color: #fff !important;
+}
+
+.spot-item-checkpoint-selected {
+  border: solid #EA5252 2px !important;
+}
+
+.spot-item-checkpoint-text {
+  font-size: 25rpx;
+}
+
+.spot-item-checkpoint-text-offset {
+  position: relative;
+  top: 28rpx;
+}
+
 .spot-item-tag {
   width: 136rpx;
   height: 60rpx;
@@ -209,5 +324,106 @@ export default {
   background-color: #EAEDF4 !important;
   color: #28272C !important;
   font-weight: 600;
+}
+
+.spot-detail {
+  margin-top: 30rpx;
+}
+
+.spot-detail-title {
+  text-align: center;
+  color: #686F7A;
+  font-size: 28rpx;
+}
+
+.spot-detail-checkpoint-title
+{
+  margin-top: 20rpx;
+  color: #EA5252;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.spot-detail-checkpoint-address {
+  color: #686F7A;
+  font-size: 25rpx;
+}
+
+.spot-detail-checkpoint-direction-btn {
+  background-color: #686F7A !important;
+  margin-right: 20rpx;
+  color: #fff !important; 
+  margin-top: 20rpx;
+}
+
+.spot-detail-checkpoint-check-btn {
+  background-color: #EA5252 !important;
+  margin-right: 20rpx;
+  color: #fff !important;  
+  margin-top: 20rpx;
+}
+
+.spot-detail-checkpoint-address-icon {
+  width: 20rpx;
+  height: 28rpx;
+  position: relative;
+  top: 6rpx;
+}
+
+.spot-detail-realtime {
+  padding-bottom: 20rpx;
+  border-bottom: solid 2rpx #F5F3F1;
+}
+
+.spot-detail-realtime-title {
+  text-align: left;
+  margin-top: 30rpx;
+}
+
+.spot-detail-realtime-text {
+  font-size: 40rpx;
+  font-weight: 500;
+}
+
+.spot-detail-realtime-images {
+  margin-top: 30rpx;
+}
+
+.spot-detail-realtime-image {
+  display: inline-block;
+  width: 220rpx;
+  height: 180rpx;
+}
+
+.spot-detail-realtime-image-gap {
+  margin-left: 20rpx;
+}
+
+.spot-detail-realtime-times {
+  text-align: left;
+}
+
+.spot-detail-realtime-item {
+  width: 220rpx;
+  text-align: left;
+}
+
+.spot-detail-realtime-item-gap {
+  margin-left: 20rpx;
+}
+
+.spot-detail-realtime-time {
+  color: #838386;
+  font-size: 24rpx;
+  position: relative;
+  top: -10rpx;
+}
+
+.spot-detail-realtime-time-gap {
+  margin-left: 30rpx;
+}
+
+.spot-item-checkpointed-gap {
+  margin-top: 10rpx !important;
 }
 </style>
