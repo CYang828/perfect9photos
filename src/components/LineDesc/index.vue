@@ -76,10 +76,10 @@
           <view class="spot-detail-checkpoint-title">
             <label>4号点位</label>
           </view>
-          <label class="spot-detail-checkpoint-address">
+          <view class="spot-detail-checkpoint-info">
             <image class="spot-detail-checkpoint-address-icon" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/location.png" />
-广东省梅州市梅州县xx区xxxx街道xx号
-          </label>
+            <label class="spot-detail-checkpoint-address">广东省梅州市梅州县xx区xxxx街道xx号</label>
+          </view>
           <van-row>
             <van-button type="default" size="small" custom-class="spot-detail-checkpoint-direction-btn">导航</van-button>
             <van-button type="default" size="small" custom-class="spot-detail-checkpoint-check-btn">打卡</van-button>
@@ -243,6 +243,7 @@ export default {
   font-size: 34rpx;
   font-weight: 700;
   color: #000;
+  margin-left: -15rpx;
 }
 
 .spot-items-tag {
@@ -280,13 +281,13 @@ export default {
 }
 
 .spot-item-checkpoint-checked {
-  background-color: #EA5252;
-  border: solid #EA5252 1px !important;
+  background-color: #FF8181;
+  border: solid #FF8181 1px !important;
   color: #fff !important;
 }
 
 .spot-item-checkpoint-selected {
-  border: solid #EA5252 2px !important;
+  border: solid #FF8181 2px !important;
 }
 
 .spot-item-checkpoint-text {
@@ -327,6 +328,7 @@ export default {
 }
 
 .spot-detail {
+  margin-left: -15rpx !important;
   margin-top: 30rpx;
 }
 
@@ -334,19 +336,26 @@ export default {
   text-align: center;
   color: #686F7A;
   font-size: 28rpx;
+  margin-left: -15rpx
+}
+
+.spot-detail-checkpoint-info {
+  text-align: center;
 }
 
 .spot-detail-checkpoint-title
 {
   margin-top: 20rpx;
-  color: #EA5252;
+  color: #FF8181;
   font-size: 30rpx;
   font-weight: 800;
+  margin-left: -15rpx;
 }
 
 .spot-detail-checkpoint-address {
   color: #686F7A;
   font-size: 25rpx;
+  margin-left: 8rpx;
 }
 
 .spot-detail-checkpoint-direction-btn {
@@ -354,13 +363,15 @@ export default {
   margin-right: 20rpx;
   color: #fff !important; 
   margin-top: 20rpx;
+  border-radius: 10rpx !important;
 }
 
 .spot-detail-checkpoint-check-btn {
-  background-color: #EA5252 !important;
+  background-color: #FF8181 !important;
   margin-right: 20rpx;
   color: #fff !important;  
   margin-top: 20rpx;
+  border-radius: 10rpx !important;
 }
 
 .spot-detail-checkpoint-address-icon {
@@ -378,6 +389,8 @@ export default {
 .spot-detail-realtime-title {
   text-align: left;
   margin-top: 30rpx;
+  margin-left: -15rpx;
+  font-weight: 800;
 }
 
 .spot-detail-realtime-text {

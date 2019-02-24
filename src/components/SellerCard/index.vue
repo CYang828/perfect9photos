@@ -17,6 +17,9 @@
         <image class="seller-card-voucher" src="https://7065-perfect9photos-b0f95d-1258496539.tcb.qcloud.la/static/image/line/vouncher.png" />
         <label class="seller-card-bonus-text seller-card-bonus-head">满58减20</label>
       </view>
+      <view class="seller-card-bonus-line seller-card-bonus-offset">
+        <label class="seller-card-bonus-text ">......</label>
+      </view>
       <van-button type="default" size="small" custom-class="seller-card-bonus-btn">领取</van-button>
     </view>
   </view>
@@ -44,11 +47,17 @@ export default {
 
 <style>
 .seller-card {
-  padding: 0rpx;
+  margin-left: 68rpx;
+  width: 560rpx;
+  background-color:#fff;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  border-radius: 20rpx;
+  padding:20rpx 30rpx;
+
 }
 
 .seller-card-image {
-  width: 600rpx;
+  width: 560rpx;
   height: 300rpx;
   border-radius: 20rpx;
 }
@@ -63,7 +72,7 @@ export default {
 }
 
 .seller-card-name {
-  margin-left: 90rpx;
+  margin-left: 20rpx;
   font-size: 30rpx;
   color: #000;
   font-weight: 600;
@@ -78,16 +87,20 @@ export default {
 .seller-card-bonus {
   margin-top: 20rpx;
   text-align: left;
-  margin-left: 90rpx;
 }
 
 .seller-card-bonus-line {
+  margin-left: 20rpx;
   margin-top: -20rpx;
+}
+
+.seller-card-bonus-offset {
+  margin-top: -30rpx;
 }
 
 .seller-card-bonus-text {
   font-size: 22rpx;
-  color: #EA5252;
+  color: #FF8181;
 }
 
 .seller-card-bonus-head {
@@ -97,13 +110,15 @@ export default {
 }
 
 .seller-card-bonus-tail {
-  margin-left: 305rpx;
+  margin-left: 255rpx;
 } 
 
 .seller-card-bonus-btn {
-  margin-left: 470rpx;
-  background-color: #EA5252 !important;
+  margin-left: 450rpx;
+  background-color: #FF8181 !important;
   border-radius: 10rpx !important;
   margin-top: -40rpx;
+  color: #fff !important;
+  height: 50rpx !important;
 }
 </style>

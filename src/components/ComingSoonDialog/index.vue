@@ -5,19 +5,19 @@
   :show="get_comingsoon_dialog_show"
   @confirm="onConfirm"
 >
-<van-row>
-  <van-col custom-class="dialog-text">
-    <van-row>
-      <label>九图计划</label>
-    </van-row>
-    <van-row>
-      <label class="dialog-declare-text">智慧全域旅游一站式解决方案</label>
-    </van-row>
-  </van-col>
-  <van-col>
-    <image class="dialog-image" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/caicai.png" />
-  </van-col>
+
+<van-row custom-class="dialog-image-layout">
+  <image class="dialog-image" src="https://7065-perfect9photos-b0f95d-1258496539.tcb.qcloud.la/static/image/caicai.png" />
 </van-row>
+
+
+<van-row custom-class="dialog-text-title">
+  <label>九图计划</label>
+</van-row>
+<van-row custom-class='dialog-declare-text'>
+  <label class="dialog-declare-text">智慧全域旅游一站式解决方案</label>
+</van-row>
+
 </van-dialog>
 </template>
 
@@ -56,16 +56,26 @@ export default {
   margin-top: 100rpx;
 }
 
-.dialog-declare-text {
-  color: #838386;
-  font-size: 22rpx;
+.dialog-text-title {
+  text-align: center;
   margin-top: 30rpx;
 }
 
+.dialog-declare-text {
+  text-align: center;
+  color: #838386;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 40rpx;
+}
+
+.dialog-image-layout {
+  text-align: center;
+}
+
 .dialog-image {
-  width: 104rpx;
-  height: 150rpx;
-  margin-top: 60rpx;
-  margin-left: 100rpx;
+  width: 160rpx;
+  height: 208rpx;
+  margin-top: 50rpx;
 }
 </style>

@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/line/main",
+    "pages/fake-spot/main",
     "pages/spot/main",
+    "pages/line/main",
     "pages/detail/main"
   ]
 }

@@ -7,15 +7,15 @@
                    :sellerUrl="'/pages/detail/main'" />
       <view class="spot-arounding-item-gap"></view>
       <seller-card :sellerImage="'https://7065-perfect9photos-b0f95d-1258496539.tcb.qcloud.la/static/image/line/seller2.png'" 
-                   :sellerName="'情人湖餐厅'" :sellerPrice="'人均90元'" 
+                   :sellerName="'知日下午茶'" :sellerPrice="'人均120元'" 
                    :sellerUrl="'/pages/detail/main'" />
       <view class="spot-arounding-item-gap"></view>
       <seller-card :sellerImage="'https://7065-perfect9photos-b0f95d-1258496539.tcb.qcloud.la/static/image/line/seller3.png'" 
-                   :sellerName="'情人湖餐厅'" :sellerPrice="'人均90元'" 
+                   :sellerName="'最海鲜'" :sellerPrice="'人均180元'" 
                    :sellerUrl="'/pages/detail/main'" />
       <view class="spot-arounding-item-gap"></view>
       <seller-card :sellerImage="'https://7065-perfect9photos-b0f95d-1258496539.tcb.qcloud.la/static/image/line/seller4.png'" 
-                   :sellerName="'情人湖餐厅'" :sellerPrice="'人均90元'" 
+                   :sellerName="'泰火'" :sellerPrice="'人均120元'" 
                    :sellerUrl="'/pages/detail/main'" />
     </view>
   </view>

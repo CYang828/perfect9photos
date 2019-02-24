@@ -17,7 +17,7 @@
   <view class="recommand-items">
     <van-row>
       <van-col>
-        <a href="/pages/spot/main">
+        <a href="/pages/fake-spot/main">
           <image class="recommand-item-big" mode="scaleToFill" src="cloud://perfect9photos-b0f95d.7065-perfect9photos-b0f95d/static/image/index/recommand1.png" />
         </a>
       </van-col>

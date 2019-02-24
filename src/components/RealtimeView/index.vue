@@ -74,6 +74,8 @@ export default {
 .spot-detail-realtime-text {
   font-size: 28rpx;
   color: #000;
+  font-weight: 800;
+
 }
 
 .spot-detail-realtime-images {
